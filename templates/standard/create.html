@@ -1,0 +1,18 @@
+<!--
+File: create.html
+Author: 김성중
+Version: 1.0
+Date: 2024-02-04
+
+Description: 파이 표준 Create html
+helper.standard_create 함수와 연계되어 사용
+-->
+
+
+<!-- templates/registration/login.html -->
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">전송</button>
+</form>
+<!--{{ errors }}-->

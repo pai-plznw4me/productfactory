@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8"/>
+    <title>MARP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template"/>
+    <meta name="keywords" content="Appointment, Booking, System, Dashboard, Health"/>
+    <meta name="author" content="Shreethemes"/>
+    <meta name="email" content="support@shreethemes.in"/>
+    <meta name="website" content="https://shreethemes.in"/>
+    <meta name="Version" content="v1.2.0"/>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'doctris_base/images/pai-favicon.png' %}">
+    <!-- Bootstrap -->
+    <link href="{% static 'doctris_base/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- simplebar -->
+    <link href="{% static 'doctris_base/css/simplebar.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- Select2 -->
+    <link href="{% static 'doctris_base/css/select2.min.css' %}" rel="stylesheet"/>
+    <!-- Icons -->
+    <link href="{% static 'doctris_base/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'doctris_base/css/remixicon.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="https://unicons.iconscout.com/release/v3.0.6/css/line.css" rel="stylesheet">
+    <!-- Css -->
+    <link href="{% static 'doctris_base/css/style.css' %}" rel="stylesheet" type="text/css" id="theme-opt"/>
+    <!-- datatables -->
+    <link rel="stylesheet" type="text/css" href="{% static 'doctris_base/css/jquery.dataTables.min.css' %}">
+</head>
+
+<body>
+<div id="preloader" style="visibility: hidden; opacity: 0;">
+    <div id="status">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrapper doctris-theme toggled">
+    <!-- sidebar-wrapper  -->
+    {% include 'doctris_base/side_navi.html' %}
+
+    <!-- Start Page Content -->
+    <main class="page-content bg-light">
+        {% include 'doctris_base/top_navi.html' %}
+        <div class="layout-specing">
+            <div class="container-fluid">
+                <!-- Start Content -->
+                {% block contents %}
+                {% endblock %}
+                <!-- End Content -->
+            </div>
+        </div>
+        <!-- Start Footer -->
+        {% include 'doctris_base/footer.html' %}
+        <!-- End Footer -->
+    </main>
+    <!--End page-content -->
+
+</div>
+
+<!-- jquery -->
+<script src="{% static 'doctris_base/js/jquery.min.js' %}"></script>
+<!-- bootstrap -->
+<script src="{% static 'doctris_base/js/bootstrap.bundle.min.js' %}"></script>
+<!-- simplebar -->
+<script src="{% static 'doctris_base/js/simplebar.min.js' %}"></script>
+<!-- Select2 -->
+<script src="{% static 'doctris_base/js/select2.min.js' %}"></script>
+<!-- select2 -->
+<script src="{% static 'doctris_base/js/select2.init.js' %}"></script>
+<!-- Icons -->
+<script src="{% static 'doctris_base/js/feather.min.js' %}"></script>
+<!-- Main Js -->
+<script src="{% static 'doctris_base/js/app.js' %}"></script>
+<!-- Datatable Js -->
+<script src="{% static 'doctris_base/js/jquery.dataTables.js' %}"></script>
+<!-- global Js -->
+<script src="{% static 'doctris_base/js/global.js' %}"></script>
+<!-- Chart Js -->
+<script src="{% static 'doctris_base/js/chart.js' %}"></script>
+{% block js %}
+{% endblock %}
+</body>
+</html>

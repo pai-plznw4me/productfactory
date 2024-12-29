@@ -1,0 +1,99 @@
+{% load static %}
+<div class="top-header">
+    <div class="header-bar d-flex justify-content-between border-bottom">
+        {# Left side start #}
+        <div class="d-flex align-items-center">
+            {# logo start, responsible, 화면이 작아지면 로고가 튀어나옴 #}
+            <a href="#" class="logo-icon">
+                <img src="{% static 'doctris_base/images/logo-marp.png' %}" height="30" class="small" alt="">
+                <span class="big">
+                    <img src="{% static 'doctris_base/images/logo-marp.png' %}" height="24" class="logo-light-mode"
+                         alt="">
+                </span>
+            </a>
+            {# logo end #}
+
+            {# close sidebar start #}
+            <a id="close-sidebar" class="btn btn-icon btn-pills btn-soft-primary ms-2" href="#">
+                <i class="uil uil-bars"></i>
+            </a>
+            {# close sidebar end #}
+
+            {# search bar start  #}
+            <div class="search-bar p-0 d-none d-lg-block ms-2">
+                <div id="search" class="menu-search mb-0">
+                    <form role="search" method="get" id="searchform" class="searchform">
+                        <div>
+                            <input type="text" class="form-control border rounded-pill" name="s" id="s"
+                                   placeholder="Search Keywords...">
+                            <input type="submit" id="searchsubmit" value="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {# search bar end  #}
+
+            <div class="list-inline-item mb-0 ms-1">
+                <div>홍길동</div>
+            </div>
+        </div>
+        {# Left side End #}
+
+        <ul class="list-unstyled mb-0">
+            {# Right side start #}
+            {# username start  #}
+            <li class="list-inline-item mb-0 ms-1">
+                <div>홍길동</div>
+            </li>
+            {# username end  #}
+
+            {# dropdown menu start #}
+            <li class="list-inline-item mb-0 ms-1">
+                <div class="dropdown dropdown-primary">
+                    <button type="button" class="btn btn-pills btn-soft-primary dropdown-toggle p-0"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="{% static 'doctris_base/images/profile.png' %}" class="avatar avatar-ex-small rounded-circle" alt="">
+                    </button>
+
+                    <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 py-3"
+                         style="min-width: 200px;">
+                        {# dropdown profile start #}
+                        <a class="dropdown-item d-flex align-items-center text-dark" href="profile.html">
+                            {# 프로필 이미지 #}
+                            <img src="{% static 'doctris_base/images/profile.png' %}"
+                                 class="avatar avatar-md-sm rounded-circle border shadow" alt="">
+                            {# 프로필 정보 #}
+                            <div class="flex-1 ms-2">
+                                <span class="d-block mb-1">홍길동</span>
+                                <small class="text-muted">관리자</small>
+                            </div>
+                        </a>
+                        {# dropdown profile end #}
+
+                        <a class="dropdown-item text-dark" href="{% url 'doctris_base:index' %}">
+                            <span class="mb-0 d-inline-block me-1">
+                                <i class="uil uil-setting align-middle h6"></i>
+                            </span>
+                            Profile Settings
+                        </a>
+                        <a class="dropdown-item text-dark" href="{% url 'doctris_base:index' %}">
+                            <span class="mb-0 d-inline-block me-1">
+                                <i class="uil uil-setting align-middle h6"></i>
+                            </span>
+                            요금
+                        </a>
+                        <div class="dropdown-divider border-top"></div>
+                        <a class="dropdown-item text-dark" href='{% url 'doctris_base:index' %}'>
+                            <span class="mb-0 d-inline-block me-1">
+                                <i class="uil uil-sign-out-alt align-middle h6"></i>
+                            </span>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {# dropdown menu end #}
+            {# Right side end #}
+        </ul>
+    </div>
+</div>

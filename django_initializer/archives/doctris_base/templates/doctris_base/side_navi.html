@@ -1,0 +1,86 @@
+{% load static %}
+<nav class="sidebar-wrapper" id="sidebar">
+ <div class="sidebar-content" data-simplebar="" style="height: calc(100% - 60px);">
+  {# Logo start #}
+  <div class="sidebar-brand">
+   <a href="{% url 'doctris_base:index' %}">
+    <img alt="" class="logo-light-mode" height="28" src="{% static 'doctris_base/images/logo-marp.png' %}"/>
+   </a>
+  </div>
+  {# Logo end #}
+  <!-- sidebar-menu Start -->
+  <ul class="sidebar-menu pt-3">
+   {# 폴더 메뉴 #}
+   {# 단일 메뉴 #}
+   <li>
+    <a href="{% url 'account:profile' %}">
+     <i class="uil uil-user me-2 d-inline-block">
+     </i>
+     프로필
+    </a>
+   </li>
+   <li>
+    <a href=" ">
+     <i class="uil uil-apps me-2 d-inline-block">
+     </i>
+     프로젝트 관리
+    </a>
+   </li>
+   <li class="sidebar-dropdown">
+    <a href="javascript:void(0)">
+     <i class="uil uil-transaction me-2 d-inline-block">
+     </i>
+     결제 관리
+    </a>
+    <div class="sidebar-submenu">
+     <ul>
+      <li>
+       <a href=" ">
+        구매
+       </a>
+      </li>
+      <li>
+       <a href=" ">
+        판매
+       </a>
+      </li>
+     </ul>
+    </div>
+   </li>
+   <li>
+    <a href=" ">
+     <i class="uil uil-archive me-2 d-inline-block">
+     </i>
+     자원 관리
+    </a>
+   </li>
+   <li>
+    <a href=" ">
+     <i class="uil uil-files-landscapes-alt me-2 d-inline-block">
+     </i>
+     산출물 관리
+    </a>
+   </li>
+   <li>
+    <a href=" ">
+     <i class="uil uil-user-arrows me-2 d-inline-block">
+     </i>
+     인력 관리
+    </a>
+   </li>
+  </ul>
+  <!-- sidebar-menu End -->
+ </div>
+ <!-- sidebar-content Start -->
+ <ul class="sidebar-footer list-unstyled mb-0">
+  {# Chatting start #}
+  <li class="list-inline-item mb-0 ms-1">
+   <a class="btn btn-icon btn-pills btn-soft-primary" href="#">
+    <i class="uil uil-comment icons">
+    </i>
+   </a>
+  </li>
+  {# Chatting end #}
+ </ul>
+ <!-- sidebar-content end -->
+</nav>

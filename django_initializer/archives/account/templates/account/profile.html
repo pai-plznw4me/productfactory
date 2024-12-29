@@ -1,0 +1,23 @@
+{% load index %}
+{% load static %}
+{% block contents %}
+    {% for verbose_name in verbose_names %}
+        {# 필드 타입, 필드 이름, 필드 값 정보를 순차적 가져와 작업 수행 #}
+        {% with field_type=field_types|index:forloop.counter0 field_name=field_names|index:forloop.counter0   field_value=field_values|index:forloop.counter0 %}
+            {# 필드 타입에 따라 다르게 보여줌 #}
+            {% if field_type == 'ImageField' %}
+                {{ verbose_name }} : <p><img height="200px" src={{ object|getattribute:field_name|getattribute:'url'}}></p>
+            {% elif field_type == 'FileField' %}
+                {{ verbose_name }} : <p><a href={{ object|getattribute:field_name|getattribute:'url' }}>{{ field_value }}</a></p>
+            {% elif field_type == 'MultipleChoiceField' %}
+                {{ verbose_name }}
+                {% for value in field_value %}
+                    <p><a href=>{{ value }}</a></p>
+                {% endfor %}
+
+            {% else %}
+                <p>{{ verbose_name }} : {{ field_value }}</p>
+            {% endif %}
+        {% endwith %}
+    {% endfor %}
+{% endblock %}
